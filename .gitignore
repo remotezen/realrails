@@ -12,7 +12,11 @@
 !/log/.keep
 /tmp
 /vendor/bundle/*
+<<<<<<< HEAD
 /config/*
 /spring/*.pid
 /log/*.log
 vendor/bundle/*
+=======
+config/*
+>>>>>>> parent of ed6d222... added testing stuff
