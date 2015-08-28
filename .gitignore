@@ -12,4 +12,6 @@
 !/log/.keep
 /tmp
 /vendor/bundle/*
-config/*
+/config/*
+/spring/*.pid
+/log/*.log
