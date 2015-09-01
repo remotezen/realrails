@@ -1,0 +1,24 @@
+Tue, 01 Sep 2015 11:10:58 -0400
+README.rdoc	Fri, 28 Aug 2015 08:20:00 -0400
+app/controllers/application_controller.rb	Fri, 28 Aug 2015 08:20:00 -0400
+app/controllers/static_pages_controller.rb	Fri, 28 Aug 2015 13:50:58 -0400
+app/controllers/users_controller.rb	Fri, 28 Aug 2015 14:16:19 -0400
+app/helpers/application_helper.rb	Fri, 28 Aug 2015 10:47:19 -0400
+app/helpers/static_pages_helper.rb	Fri, 28 Aug 2015 10:30:09 -0400
+app/helpers/users_helper.rb	Fri, 28 Aug 2015 14:16:19 -0400
+app/models/user.rb	Tue, 01 Sep 2015 11:06:04 -0400
+config/application.rb	Fri, 28 Aug 2015 08:20:00 -0400
+config/boot.rb	Fri, 28 Aug 2015 08:20:00 -0400
+config/environment.rb	Fri, 28 Aug 2015 08:20:00 -0400
+config/environments/development.rb	Fri, 28 Aug 2015 08:20:00 -0400
+config/environments/production.rb	Fri, 28 Aug 2015 08:20:00 -0400
+config/environments/test.rb	Fri, 28 Aug 2015 08:20:00 -0400
+config/initializers/assets.rb	Fri, 28 Aug 2015 08:20:00 -0400
+config/initializers/backtrace_silencers.rb	Fri, 28 Aug 2015 10:21:18 -0400
+config/initializers/cookies_serializer.rb	Fri, 28 Aug 2015 08:20:00 -0400
+config/initializers/filter_parameter_logging.rb	Fri, 28 Aug 2015 08:20:00 -0400
+config/initializers/inflections.rb	Fri, 28 Aug 2015 08:20:00 -0400
+config/initializers/mime_types.rb	Fri, 28 Aug 2015 08:20:00 -0400
+config/initializers/session_store.rb	Fri, 28 Aug 2015 08:20:00 -0400
+config/initializers/wrap_parameters.rb	Fri, 28 Aug 2015 08:20:00 -0400
+config/routes.rb	Mon, 31 Aug 2015 08:10:01 -0400
