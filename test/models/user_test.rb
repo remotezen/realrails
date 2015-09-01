@@ -2,7 +2,7 @@ require 'test_helper'
 class UserTest < ActiveSupport::TestCase
 def setup
   @user = User.new(name: "Fred Hudson",
-                   email: "gritty@sympatico.ca",
+                   email: "GriTty@SymPatico.ca",
                   password: "foobar",
                   password_confirmation: "foobar")
 end
@@ -32,7 +32,8 @@ test "email should accept valid addresses" do
 end
   test "email validation should reject invalid addresses" do
     invalid_addresses = %w[ user@example,com user_at_foo.org user.name@example.
-                               foo@bar_baz.com foo@bar+baz.com ]
+                               foo@bar_baz.com foo@bar+baz.com  
+    fooo.bar@bar...org]
      invalid_addresses.each do |invalid_address|
       @user.email = invalid_address
       assert_not @user.valid?, 
@@ -44,6 +45,12 @@ end
       @user.save
       dup_user.email = @user.email.upcase
       assert_not dup_user.valid?
+    end
+
+    test "ensure password was downcased" do 
+      @user.save
+      user_with_downcased_email = @user.reload.email
+      assert_equal user_with_downcased_email, @user.email.downcase
     end
 
     #~~~~~~~~~~~~~~~~~~~~~~~
