@@ -1,4 +1,6 @@
 class User < ActiveRecord::Base
+  include Gravtastic
+  gravtastic
   #NAME========================
   before_save { self.email.downcase!  }
   validates :name, presence: true
