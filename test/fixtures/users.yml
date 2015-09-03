@@ -3,3 +3,9 @@ fred:
   name: Fred Hudson
   email: gritty@gritty.com
   password_digest: <%= User.digest('password') %>
+
+archer:
+  name: remote zen
+  email: remotezen@bell.net
+  password_digest: <%= User.digest('password') %>
+
