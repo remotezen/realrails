@@ -58,6 +58,9 @@ class UsersEditTest < ActionDispatch::IntegrationTest
       @user.reload
       assert_equal name, @user.name
       assert_equal email, @user.email
+      get edit_user_path(@user)
+      log_in_as(@user)
+      assert_equal session[:fowarding_url], nil
 
   end
 end

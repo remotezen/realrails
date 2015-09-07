@@ -1,8 +1,10 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
 fred:
   name: Fred Hudson
   email: gritty@gritty.com
   password_digest: <%= User.digest('password') %>
+  admin: true
 
 archer:
   name: remote zen

@@ -24,6 +24,9 @@ class UsersLoginTest < ActionDispatch::IntegrationTest
       assert_select "a[href=?]", login_path, count: 0
       assert_select "a[href=?]", logout_path
       assert_select "a[href=?]", user_path(@user) 
+      assert_select "a[href=?]", login_path, count:0
+      assert_select "a[href=?]", users_path 
+      assert_select "a[href=?]", logout_path 
   end
   test "login with valid information followed by logout" do 
       get login_path
