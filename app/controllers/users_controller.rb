@@ -2,11 +2,12 @@ class UsersController < ApplicationController
   before_action :logged_in_user, only: [:edit, :update,:index, :destroy]
   before_action :correct_user, only: [:edit, :update]
   before_action :admin_user, only: :destroy
+  
   def new
     @user = User.new
   end
   def index 
-    @users = User.paginate(page: params[:page], per_page:10)
+    @users = User.where(activated: true).paginate(page: params[:page], per_page:10)
   end
   def destroy 
     User.find(params[:id]).destroy
@@ -23,7 +24,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save 
       #log_in @user
-      UserMailer.account_activation(@user).deliver_now
+      @user.send_activation_email
       flash[:success] = 
         "Please check your email to activate your account"
       redirect_to root_url 
