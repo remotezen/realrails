@@ -17,6 +17,7 @@
 /spring/*.pid
 /log/*.log
 vendor/bundle/*
+/public/uploads
 =======
 config/*
 >>>>>>> parent of ed6d222... added testing stuff

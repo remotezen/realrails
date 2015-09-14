@@ -2,11 +2,15 @@ class User < ActiveRecord::Base
   include Gravtastic
   gravtastic
   attr_accessor :remember_token, :activation_token, :reset_token
+  #################Microposts
+  has_many :microposts, dependent: :destroy
+
   #NAME========================
   before_create :create_activation_digest
   before_save { self.email.downcase!  }
   validates :name, presence: true
   #EMAIL===========================
+
   
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-]+\.{1}[a-z]+\z/i
   validates :email, presence: true, length: { maximum: 255 },
@@ -60,6 +64,10 @@ class User < ActiveRecord::Base
   def password_reset_expired? 
     reset_sent_at < 2.hours.ago
   end
+   
+  def feed 
+     microposts
+   end
 
   private
   def downcase_email 
