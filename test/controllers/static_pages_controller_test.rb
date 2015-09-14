@@ -26,4 +26,16 @@ class StaticPagesControllerTest < ActionController::TestCase
     assert_select "title", "Contact | #{ @base_title }"
 
   end
+  test "should have text area input" do 
+    @user = users(:archer)
+    log_in_as(@user)
+    assert_select 'textarea'
+    post microposts_path, micropost: { content: content }
+    assert_equal @user.microposts.count, 1
+    post microposts_path, micropost: { content: content }
+    assert_equal @user.microposts.count, 2 
+    assert_match "2 microposts", response.body
+
+      
+  end
 end
