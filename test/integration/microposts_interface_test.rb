@@ -31,8 +31,6 @@ class MicropostsInterfaceTest < ActionDispatch::IntegrationTest
           delete microposts_path(first_micropost)
       end
 =end      
-      get user_path(users(:archer))
-      assert_select 'a', text:'delete', count:0
   end
 end
 

@@ -75,8 +75,32 @@ end
           @user.destroy
         end
     end
-        
+    #user relationship tests
+    test "should follow and unfollow a user" do 
+       fred = users(:fred) 
+       archer = users(:archer)
+       fred.follow(archer)
+       assert fred.following?(archer)
+       fred.unfollow(archer)
+       assert_not fred.following?(archer)
     end
+        
+  test "feed should have the right posts" do 
+     fred = users(:fred) 
+     lana = users(:lana)
+     archer = users(:archer)
+     archer.microposts.each do |post_following|
+       assert fred.feed.include?(post_following)
+     end
+     lana.microposts.each do |post_following|
+       assert archer.feed.include?(post_following)
+     end
+     lana.microposts.each do |post_unfollowed|
+       assert_not fred.feed.include?(post_unfollowed)
+        
+     end
+  end
+  end
   # test "the truth" do
   #   assert true
   # end
